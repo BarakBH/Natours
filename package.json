@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon server.js",
-    "prod": "NODE_ENV=production nodemon server.js"
+    "prod": "NODE_ENV=production nodemon server.js",
+    "deleteDB": "node dev-data/data/import-dev-data.js --delete",
+    "importDevDataToDB": "node dev-data/data/import-dev-data.js --import"
   },
   "author": "Barak Ben Hamo",
   "license": "ISC",
