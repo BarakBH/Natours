@@ -11,7 +11,7 @@ exports.aliasTopTours = (req, res, next) => {
 exports.getAllTours = async (req, res) => {
   try {
     // EXECUTE QUERY
-    const features = new APIFeatures(Tour.find(), req.query)
+    const features = new APIFeatures(Tour.find(), req.query)    //features in utils that we can do as we need for our server behaviour
       .filter()
       .sort()
       .limitFields()
@@ -113,12 +113,12 @@ exports.deleteTour = async (req, res) => {
 
 exports.getTourStats = async (req, res) => {
   try {
-    const stats = await Tour.aggregate([
+    const stats = await Tour.aggregate([    //aggregate pipeline - feature of mongodb and mongoose to query by stages 
       {
-        $match: { ratingsAverage: { $gte: 4.5 } }
+        $match: { ratingsAverage: { $gte: 4.5 } } //$match is the name of the stage and then the query
       },
       {
-        $group: {
+        $group: {                                 // group is allways start with id , null is for all, then we can do things like average and sum
           _id: { $toUpper: '$difficulty' },
           numTours: { $sum: 1 },
           numRatings: { $sum: '$ratingsQuantity' },
@@ -131,7 +131,7 @@ exports.getTourStats = async (req, res) => {
       {
         $sort: { avgPrice: 1 }
       }
-      // {
+      // {                                        //we can repeat stages
       //   $match: { _id: { $ne: 'EASY' } }
       // }
     ]);
