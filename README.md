@@ -1,6 +1,6 @@
 # Natours
-JS NodeJS Express MongoDB project
-Tours Web for ordering and viewing tours and more.
+## JS NodeJS Express MongoDB project
+### Tours Web for ordering and viewing tours and more.
 In this project I intend to learn advanced NodeJS and MongoDB.
 This project covers all the basics and advanced features given from NodeJS and Mongo, Understanding how NodeJS works and NPM, Back-End development, building an API,
 Working with mongoDB, Atlas, Compass and learn the Mongo and Mongoose library.
