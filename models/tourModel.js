@@ -3,6 +3,7 @@ const slugify = require('slugify');
 // const validator = require('validator'); 
 
 
+// Fat models thin controllers philosophy
 const tourSchema = new mongoose.Schema(
   {
     name: {
